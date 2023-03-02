@@ -20,7 +20,7 @@ const Pagination: React.FC<TPaginationProps> = ({totalCount, itemsLimit, activeP
 
     React.useEffect(() => {
         dispatch(setActivePage(Number(page)))
-    }, [])
+    }, [dispatch, page])
     
   return (
     <div className={styles.root}>
@@ -36,7 +36,7 @@ const Pagination: React.FC<TPaginationProps> = ({totalCount, itemsLimit, activeP
                     <li
                         key={index}
                         className={page && +page === index + 1 ? styles.active : ''}
-                        onClick={() => { dispatch(setActivePage(index + 1)); navigate(`../posts/${index + 1}`) }}
+                        onClick={() => navigate(`../posts/${index + 1}`)}
                     >
                         {index + 1}
                     </li>
