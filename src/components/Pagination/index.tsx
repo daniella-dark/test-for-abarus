@@ -25,7 +25,7 @@ const Pagination: React.FC<TPaginationProps> = ({totalCount, itemsLimit, activeP
   return (
     <div className={styles.root}>
         <button
-            onClick={() => dispatch(setActivePage(activePage - 1))}
+            onClick={() => navigate(`../posts/${activePage - 1}`)}
             disabled={activePage === 1}
         >
             Назад
@@ -44,7 +44,7 @@ const Pagination: React.FC<TPaginationProps> = ({totalCount, itemsLimit, activeP
             }
         </ul>
         <button
-            onClick={() => dispatch(setActivePage(activePage + 1))}
+            onClick={() => navigate(`../posts/${activePage + 1}`)}
             disabled={activePage === pageCount}
         >
             Вперед
