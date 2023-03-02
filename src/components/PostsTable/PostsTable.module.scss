@@ -1,0 +1,54 @@
+@import '../../scss/colors';
+
+.root {
+    width: 100%;
+    border-collapse: collapse;
+
+    svg {
+        fill: $white;
+        transform: rotate(-90deg);
+        margin-left: 40px;
+        transition: transform .2s;
+    }
+
+    td {
+        border: 1px solid #e3e6ec;
+        line-height: 1.4;
+        padding: 12px;
+        cursor: pointer;
+
+        &:nth-child(2) {
+            width: 49%;
+        }
+
+        &:nth-child(3) {
+            width: 40%;
+        }
+    }
+}
+
+.header {
+    background: $main;
+    color: $white;
+    cursor: pointer;
+
+    th {
+        padding: 21px;
+        border: none;
+    }
+}
+
+.text {
+    display: flex;
+    align-items: center;
+
+    p {
+        color: $white;
+    }
+}
+
+.active {
+    svg {
+        transform: rotate(90deg);
+    }
+}

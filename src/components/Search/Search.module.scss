@@ -1,0 +1,33 @@
+@import '../../scss/colors';
+
+.root {
+    background: $grey;
+    width: 631px;
+    height: 52px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    input {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        color: $white;
+
+        &::placeholder {
+            color: $lightgrey;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        fill: $white;
+    }
+}

@@ -1,0 +1,42 @@
+@import '../../scss/colors';
+
+.root {
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-between;
+
+    ul {
+        display: flex;
+        font-size: 17px;
+        font-style: italic;
+        font-weight: 700;
+
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 23px;
+            height: 23px;
+            cursor: pointer;
+        }
+
+        .active {
+            color: $green
+        }
+    }
+
+    button {
+        padding: 0 46px;
+        background: none;
+        color: $main;
+        border: none;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+
+        &:disabled {
+            color: $lightgrey;
+            cursor: default;
+        }
+    }
+}

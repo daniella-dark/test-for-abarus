@@ -1,0 +1,10 @@
+@import './colors';
+@import './reset';
+
+.wrapper {
+    background: $white;
+    width: calc(100vw - 156px);
+    height: 100%;
+    margin: 23px auto;
+    max-width: 1077px;
+}
