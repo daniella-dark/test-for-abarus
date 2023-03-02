@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { setActivePage } from '../../redux/filter/slice';
 
 import styles from './Pagination.module.scss'
@@ -14,6 +15,13 @@ const Pagination: React.FC<TPaginationProps> = ({totalCount, itemsLimit, activeP
     const dispatch = useDispatch()
     const pageCount = Math.ceil(totalCount / itemsLimit)
 
+    const navigate = useNavigate();
+    const { page } = useParams<{ page?: string }>()
+
+    React.useEffect(() => {
+        dispatch(setActivePage(Number(page)))
+    }, [])
+    
   return (
     <div className={styles.root}>
         <button
@@ -27,8 +35,8 @@ const Pagination: React.FC<TPaginationProps> = ({totalCount, itemsLimit, activeP
                 [...Array(pageCount)].map((_, index) =>
                     <li
                         key={index}
-                        className={activePage === index + 1 ? styles.active : ''}
-                        onClick={() => dispatch(setActivePage(index + 1))}
+                        className={page && +page === index + 1 ? styles.active : ''}
+                        onClick={() => { dispatch(setActivePage(index + 1)); navigate(`../posts/${index + 1}`) }}
                     >
                         {index + 1}
                     </li>

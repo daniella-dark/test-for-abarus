@@ -5,8 +5,8 @@ import Home from '../pages/Home'
 const AppRouter = () => {
   return (
     <Routes>
-      <Route path={'/posts'} element={<Home />} />
-      <Route path={'*'} element={<Navigate to="/posts" replace={true} />} />
+      <Route path={'/posts/:page'} element={<Home />} />
+      <Route path={'*'} element={<Navigate to="/posts/1" replace={true} />} />
     </Routes>
   )
 }
